@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Download App</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background: #080814;
+      position: relative;
+    }
+
+    /* ===== Animated Background Bubbles ===== */
+
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.65;
+      animation: float 10s ease-in-out infinite alternate;
+    }
+
+    .bubble1 {
+      width: 300px;
+      height: 300px;
+      background: linear-gradient(135deg, #7c3aed, #ec4899);
+      top: -80px;
+      left: -80px;
+      animation-duration: 9s;
+    }
+
+    .bubble2 {
+      width: 350px;
+      height: 350px;
+      background: linear-gradient(135deg, #06b6d4, #3b82f6);
+      bottom: -120px;
+      right: -100px;
+      animation-duration: 12s;
+      animation-delay: -3s;
+    }
+
+    .bubble3 {
+      width: 220px;
+      height: 220px;
+      background: linear-gradient(135deg, #f97316, #eab308);
+      top: 45%;
+      left: 50%;
+      animation-duration: 11s;
+      animation-delay: -5s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(80px, -60px) scale(1.15);
+      }
+
+      100% {
+        transform: translate(-60px, 70px) scale(0.9);
+      }
+    }
+
+    /* ===== Main Content ===== */
+
+    .container {
+      position: relative;
+      z-index: 10;
+      width: 90%;
+      max-width: 420px;
+      text-align: center;
+      padding: 40px 25px;
+    }
+
+    /* App Logo */
+
+    .app-logo {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 30px;
+
+      display: block;
+      margin: 0 auto 30px;
+
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.4);
+
+      animation: logoFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes logoFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Download Button */
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 16px 38px;
+      min-width: 200px;
+
+      border-radius: 50px;
+      text-decoration: none;
+
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+
+      background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #ec4899
+      );
+
+      box-shadow:
+        0 10px 30px rgba(124, 58, 237, 0.4);
+
+      transition: all 0.3s ease;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-4px) scale(1.03);
+
+      box-shadow:
+        0 15px 40px rgba(236, 72, 153, 0.5);
+    }
+
+    .download-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* Small screen adjustment */
+
+    @media (max-width: 500px) {
+
+      .app-logo {
+        width: 120px;
+        height: 120px;
+        border-radius: 26px;
+      }
+
+      .download-btn {
+        font-size: 17px;
+        padding: 15px 32px;
+      }
+
+      .bubble1 {
+        width: 220px;
+        height: 220px;
+      }
+
+      .bubble2 {
+        width: 260px;
+        height: 260px;
+      }
+
+      .bubble3 {
+        width: 170px;
+        height: 170px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== Animated Background ===== -->
+
+  <div class="bubble bubble1"></div>
+  <div class="bubble bubble2"></div>
+  <div class="bubble bubble3"></div>
+
+
+  <!-- ===== Main Landing Page ===== -->
+
+  <main class="container">
+
+    <!--
+      CHANGE YOUR APP LOGO HERE
+
+      Example:
+      https://yourwebsite.com/logo.png
+    -->
+
+    <img
+      class="app-logo"
+      src="https://i.ibb.co/C5pHt9xT/file-0000000018408230b105ffd379376920.png"
+      alt="App Logo"
+    >
+
+
+    <!--
+      CHANGE YOUR DOWNLOAD LINK HERE
+
+      Example:
+      https://yourwebsite.com/app.apk
+    -->
+
+    <a
+      class="download-btn"
+      href="DOWNLOAD_LINK"
+      download
+    >
+      ⏬ &nbsp; Download App
+    </a>
+
+  </main>
+
+</body>
+</html>
